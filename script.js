@@ -48,10 +48,10 @@ const view ={
             duracaoMusica = document.querySelector('.classFim');
             imagem = document.querySelector('img');
             nomeMusica = document.querySelector('.classNomeMusicaENomeArtista h2');
-            nomeArtista = document.querySelector('.classNomeMusicaENomeArtista i');
+            nomeArtista = document.querySelector('.classNomeMusicaENomeArtista h3');
 
-            nomeMusica.textContent = model.musicas[index].nomeMusica;
-            nomeArtista.textContent = model.musicas[index].nomeArtista;
+            nomeMusica.textContent =  'Nome da Música: ' + model.musicas[index].nomeMusica;
+            nomeArtista.textContent = 'Artista: ' + model.musicas[index].nomeArtista;
             imagem.src = model.musicas[index].imgMusica;
             duracaoMusica.textContent = this.transformarSegundosParaMinutos(Math.floor(musica.duration));
         });

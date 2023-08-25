@@ -1,3 +1,7 @@
+html{
+    background-image: url("./resources/imagens/indexBackgroundImage.jpg");
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,14 +10,15 @@ body, html {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #333;
-    color: #ddd;
+    background-color: green;
+    color: black;
+    border: 1px solid black;
     font-family: 'Montserrat', sans-serif;
 }
 
 img {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 }
 
 
@@ -32,7 +37,7 @@ img {
 }
 
 .classNomeMusicaENomeArtista {
-    width: 300px;
+    width: 400px;
 }
 
 h2 {
@@ -40,19 +45,19 @@ h2 {
 }
 
 .classDuracaoMusica {
-    width: 300px;
+    width: 400px;
     margin-top: 25px;
 }
 
 
 .classTempo {
     display: flex;
-    width: 300px;
+    width: 400px;
     justify-content: space-between;
 }
 
 .classBarraDuracao {
-    width: 300px;
+    width: 400px;
     height: 6px;
     border: 1px solid #eee;
     border-radius: 5px;
@@ -78,7 +83,7 @@ progress {
 
 
 .classPlayer {
-    width: 300px;
+    width: 400px;
     display: flex;
     justify-content: space-around;
     align-items: center;
