@@ -1,10 +1,34 @@
 const model ={
 
 musicas :  [
-    {titulo:'Guitar solo', artista:'João Tinti', src:'musicas/We Ride! - Reed Mathis.mp3', img:'imagens/rock.jpg'},
-    {titulo:'Samba raiz', artista:'Bossa Nova Brasil', src:'musicas/Ella Vater - The Mini Vandals.mp3', img:'imagens/samba.jpg'},
-    {titulo:'Música piano', artista:'John Green', src:'musicas/A Brand New Start - TrackTribe (1).mp3', img:'imagens/piano.jpg'}
+    {nomeMusica:'Journeyman',
+     nomeArtista:'Iron Maiden', 
+     srcMusica:'resources/musicas/Iron Maiden - Journeyman.mp3', 
+     imgMusica:'resources/imagens/Iron Maiden - Journeyman.jpg'},
+
+     {nomeMusica:'Bring Me To Life',
+     nomeArtista:'Evanescence', 
+     srcMusica:'resources/musicas/Evanescence - Bring Me To Life.mp3', 
+     imgMusica:'resources/imagens/Evanescence - Bring Me To Life.jpg'},
+
+     {nomeMusica:'Hurricane',
+     nomeArtista:'Thirty Seconds to Mars', 
+     srcMusica:'resources/musicas/Thirty Seconds to Mars - Hurricane.mp3', 
+     imgMusica:'resources/imagens/Thirty Seconds to Mars - Hurricane.jpg'},
+
+     {nomeMusica:'In The End',
+     nomeArtista:'Linkin Park', 
+     srcMusica:'resources/musicas/Linkin Park - In The End.mp3', 
+     imgMusica:'resources/imagens/Linkin Park - In The End.jpg'},
+
+     {nomeMusica:'Listen To Your Heart',
+     nomeArtista:'Roxette', 
+     srcMusica:'resources/musicas/Roxette - Listen To Your Heart.mp3', 
+     imgMusica:'resources/imagens/Roxette - Listen To Your Heart.jpg'},
     ],
+
+    
+    
 };
 
 
@@ -15,53 +39,55 @@ const view ={
 
     indexMusica : 0,
 
-    renderizarMusica: function(index){
+    carregarMusica: function(index){
         musica = document.querySelector('audio');
-        musica.setAttribute('src', model.musicas[index].src);
+        musica.setAttribute('src', model.musicas[index].srcMusica);
         
         musica.addEventListener('loadeddata', () => {
 
-            duracaoMusica = document.querySelector('.fim');
+            duracaoMusica = document.querySelector('.classFim');
             imagem = document.querySelector('img');
-            nomeMusica = document.querySelector('.descricao h2');
-            nomeArtista = document.querySelector('.descricao i');
+            nomeMusica = document.querySelector('.classNomeMusicaENomeArtista h2');
+            nomeArtista = document.querySelector('.classNomeMusicaENomeArtista i');
 
-            nomeMusica.textContent = model.musicas[index].titulo;
-            nomeArtista.textContent = model.musicas[index].artista;
-            imagem.src = model.musicas[index].img;
-            duracaoMusica.textContent = this.segundosParaMinutos(Math.floor(musica.duration));
+            nomeMusica.textContent = model.musicas[index].nomeMusica;
+            nomeArtista.textContent = model.musicas[index].nomeArtista;
+            imagem.src = model.musicas[index].imgMusica;
+            duracaoMusica.textContent = this.transformarSegundosParaMinutos(Math.floor(musica.duration));
         });
 
         musica.addEventListener('timeupdate', () =>{
             let barra = document.querySelector('progress');
             barra.style.width = Math.floor((musica.currentTime / musica.duration) * 100) + '%';
-            let tempoDecorrido = document.querySelector('.inicio');
-            tempoDecorrido.textContent = this.segundosParaMinutos(Math.floor(musica.currentTime));
+            let tempoDecorrido = document.querySelector('.classInicio');
+            tempoDecorrido.textContent = this.transformarSegundosParaMinutos(Math.floor(musica.currentTime));
         });
     },
 
-    tocarMusica: function(){
+    playMusica: function(){
         musica = document.querySelector('audio');
+        document.querySelector('.classBotaoPlay').style.display = 'none';
+        document.querySelector('.classBotaoPause').style.display = 'block';
         musica.play();
-        document.querySelector('.botao-pause').style.display = 'block';
-        document.querySelector('.botao-play').style.display = 'none';
     },
     
-    pausarMusica: function (){
+    pauseMusica: function (){
         musica = document.querySelector('audio');
+        document.querySelector('.classBotaoPlay').style.display = 'block';
+        document.querySelector('.classBotaoPause').style.display = 'none';
         musica.pause();
-        document.querySelector('.botao-pause').style.display = 'none';
-        document.querySelector('.botao-play').style.display = 'block';
     },
     
-    segundosParaMinutos: function (segundos){
-        let campoMinutos = Math.floor(segundos / 60);
-        let campoSegundos = segundos % 60;
-        if (campoSegundos < 10){
-            campoSegundos = '0' + campoSegundos;
+    transformarSegundosParaMinutos: function (segundos){
+        novoSegundos = segundos % 60;
+
+        if (novoSegundos < 10){
+            novoSegundos = '0' + novoSegundos;
         }
+
+        novoMinutos = Math.floor(segundos / 60);
     
-        return campoMinutos+':'+campoSegundos;
+        return novoMinutos+':'+novoSegundos;
     },
 
 };
@@ -70,30 +96,30 @@ const view ={
 const controller ={
     init: function(){
 
-        view.renderizarMusica(view.indexMusica);
+        view.carregarMusica(view.indexMusica);
 
-        document.querySelector('.botao-play').addEventListener('click', view.tocarMusica);
+        document.querySelector('.classBotaoPlay').addEventListener('click', view.playMusica);
 
-        document.querySelector('.botao-pause').addEventListener('click', view.pausarMusica);
+        document.querySelector('.classBotaoPause').addEventListener('click', view.pauseMusica);
 
         musica = document.querySelector('audio');
 
-        document.querySelector('.anterior').addEventListener('click', () => {
+        document.querySelector('.classAnterior').addEventListener('click', () => {
             view.indexMusica--;
             if (view.indexMusica < 0) {
-                view.indexMusica = 2;
+                view.indexMusica = 4;
             }
-            view.renderizarMusica(view.indexMusica);
-            view.pausarMusica();
+            view.carregarMusica(view.indexMusica);
+            view.pauseMusica();
         });
         
-        document.querySelector('.proxima').addEventListener('click', () => {
+        document.querySelector('.classProxima').addEventListener('click', () => {
             view.indexMusica++;
-            if (view.indexMusica > 2){
+            if (view.indexMusica > 4){
                 view.indexMusica = 0;
             }
-            view.renderizarMusica(view.indexMusica);
-            view.pausarMusica();
+            view.carregarMusica(view.indexMusica);
+            view.pauseMusica();
         });
 
 

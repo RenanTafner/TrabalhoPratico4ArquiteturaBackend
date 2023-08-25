@@ -16,7 +16,22 @@ img {
     height: 300px;
 }
 
-.descricao {
+
+.classBotaoPause , .classBotaoPlay{
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.classSetas {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.classBotaoPause {
+    display: none;
+}
+
+.classNomeMusicaENomeArtista {
     width: 300px;
 }
 
@@ -24,12 +39,19 @@ h2 {
     margin-bottom: 5px;
 }
 
-.duracao {
+.classDuracaoMusica {
     width: 300px;
     margin-top: 25px;
 }
 
-.barra {
+
+.classTempo {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.classBarraDuracao {
     width: 300px;
     height: 6px;
     border: 1px solid #eee;
@@ -45,7 +67,7 @@ progress {
     background-color: #333;
 }
 
-.ponto {
+.classPonto {
     width: 20px;
     height: 20px;
     background-color: #eee;
@@ -53,13 +75,9 @@ progress {
     margin-left: -10px;
 }
 
-.tempo {
-    display: flex;
-    width: 300px;
-    justify-content: space-between;
-}
 
-.player {
+
+.classPlayer {
     width: 300px;
     display: flex;
     justify-content: space-around;
@@ -67,16 +85,4 @@ progress {
     margin-top: 15px;
 }
 
-.botao-play, .botao-pause {
-    font-size: 50px;
-    cursor: pointer;
-}
 
-.setas {
-    font-size: 40px;
-    cursor: pointer;
-}
-
-.botao-pause {
-    display: none;
-}
