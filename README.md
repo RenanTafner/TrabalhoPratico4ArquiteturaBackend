@@ -1,4 +1,4 @@
-# Trabalho Pratico 4 Arquitetura Backend
+# Trabalho Prático 4 Arquitetura Backend
 
 Neste trabalho, contruimos um player de música utilizando a arquitetura MVC (Model-View-Controller) com SPA(Single-Page-Application) com a linguagem javascript.
 
@@ -13,6 +13,8 @@ A camada de View é responsável por executar as funcionalidades da aplicação 
 A camda de Controller faz a linkagens dos elementos visuais da View com os comportamentos que dependem da camada Model.
 
 Foram utilizados linhas de código que fazem uso do comando "document.querySelector" para buscar os elementos html da página com base em suas classes css e o tipo de tag correspondente do elemento em questão.
+
+Foram utilizados fontes da google api e estilos css da api font awesome.
 
 A página index.html já deixa a primeira música "Iron Maiden - Journeyman" já pré carragada como música inicial para facilitar a implementação da lógica.
 
