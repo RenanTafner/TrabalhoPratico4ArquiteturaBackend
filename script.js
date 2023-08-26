@@ -108,6 +108,8 @@ const controller ={
             }
             view.carregarMusica(view.indexMusica);
             view.pauseMusica();
+            let barra = document.querySelector('progress');
+            barra.style.width = '0%';
         });
         
         document.querySelector('.classProxima').addEventListener('click', () => {
@@ -117,6 +119,8 @@ const controller ={
             }
             view.carregarMusica(view.indexMusica);
             view.pauseMusica();
+            let barra = document.querySelector('progress');
+            barra.style.width = '0%';
         });
 
 
