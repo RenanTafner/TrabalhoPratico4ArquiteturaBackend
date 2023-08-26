@@ -69,7 +69,7 @@ const model ={
     
         },
     
-        renderMusica: function (nomeMusicaPagina,nomeMusicaModel,
+        renderMusicaInfo: function (nomeMusicaPagina,nomeMusicaModel,
             nomeArtistaPagina, nomeArtistiaModel,
             duracaoMusicaPagina,duracaoMusicaModel,
             imagemPagina,imagemMusicaModel){
@@ -79,6 +79,10 @@ const model ={
                 duracaoMusicaPagina.textContent = duracaoMusicaModel;
                 imagemPagina.src = imagemMusicaModel;
     
+        },
+
+        renderMusicaSrc: function (musicaPagina, musicaModelSrc){
+            musicaPagina.setAttribute('src', musicaModel.srcMusica);
         },
     
         renderTempoDecorrido: function(tempoDecorridoPagina,novoTempoDecorridoPagina){
@@ -116,7 +120,8 @@ const model ={
         carregarMusica: function(index){
             musicaPagina = document.querySelector('audio');
             musicaModel = model.retornarMusica(index);
-            musicaPagina.setAttribute('src', musicaModel.srcMusica);
+            
+            view.renderMusicaSrc(musicaPagina,musicaModel.srcMusica);
             
             musicaPagina.addEventListener('loadeddata', () => {
     
@@ -125,7 +130,7 @@ const model ={
                 nomeMusicaPagina = document.querySelector('.classNomeMusicaENomeArtista h2');
                 nomeArtistaPagina = document.querySelector('.classNomeMusicaENomeArtista h3');
     
-                view.renderMusica(nomeMusicaPagina, musicaModel.nomeMusica,
+                view.renderMusicaInfo(nomeMusicaPagina, musicaModel.nomeMusica,
                     nomeArtistaPagina,musicaModel.nomeArtista,
                     duracaoMusicaPagina,this.transformarSegundosParaMinutos(Math.floor(musicaPagina.duration)),
                     imagemPagina,musicaModel.imgMusica);
