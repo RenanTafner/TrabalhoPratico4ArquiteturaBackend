@@ -113,9 +113,15 @@ const controller ={
 
         musica.addEventListener('timeupdate', () =>{
             let barra = document.querySelector('progress');
-            barra.style.width = Math.floor((musica.currentTime / musica.duration) * 100) + '%';
+            let percent =Math.floor((musica.currentTime / musica.duration) * 100) + '%';
+            barra.style.width = percent;
             let tempoDecorrido = document.querySelector('.classInicio');
             tempoDecorrido.textContent = this.transformarSegundosParaMinutos(Math.floor(musica.currentTime));
+
+            if(percent == '100%'){
+                view.pauseMusica();
+            }
+
         });
     },
 
