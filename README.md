@@ -18,8 +18,6 @@ Foram utilizadas linhas de código que fazem uso do comando "document.querySelec
 
 Foram utilizados fontes da google api e estilos css da api font awesome.
 
-A página index.html já deixa a primeira música "Iron Maiden - Journeyman" já pré carragada como música inicial para facilitar a implementação da lógica.
-
 O player exibe uma imagem que representa a música corrente, possui uma barra de progresso com o tempo corrente/tempo total da música, controles de tocar/pausar a música , avançar para a música posterior ou voltar para a música anterior.
 
 Foram utilizados um total de 5 músicas com as respectivas imagens que as representam, que são estas:
