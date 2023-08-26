@@ -120,15 +120,15 @@ const model ={
             
             musicaPagina.addEventListener('loadeddata', () => {
     
-                duracaoMusica = document.querySelector('.classFim');
-                imagem = document.querySelector('img');
-                nomeMusica = document.querySelector('.classNomeMusicaENomeArtista h2');
-                nomeArtista = document.querySelector('.classNomeMusicaENomeArtista h3');
+                duracaoMusicaPagina = document.querySelector('.classFim');
+                imagemPagina = document.querySelector('img');
+                nomeMusicaPagina = document.querySelector('.classNomeMusicaENomeArtista h2');
+                nomeArtistaPagina = document.querySelector('.classNomeMusicaENomeArtista h3');
     
-                view.renderMusica(nomeMusica, musicaModel.nomeMusica,
-                    nomeArtista,musicaModel.nomeArtista,
-                    duracaoMusica,this.transformarSegundosParaMinutos(Math.floor(musicaPagina.duration)),
-                    imagem,musicaModel.imgMusica);
+                view.renderMusica(nomeMusicaPagina, musicaModel.nomeMusica,
+                    nomeArtistaPagina,musicaModel.nomeArtista,
+                    duracaoMusicaPagina,this.transformarSegundosParaMinutos(Math.floor(musicaPagina.duration)),
+                    imagemPagina,musicaModel.imgMusica);
             });
     
             musicaPagina.addEventListener('timeupdate', () =>{
