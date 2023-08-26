@@ -69,6 +69,22 @@ const view ={
 
     },
 
+    renderMusica: function (nomeMusicaPagina,nomeMusicaModel,
+        nomeArtistaPagina, nomeArtistiaModel,
+        duracaoMusicaPagina,duracaoMusicaModel,
+        imagemPagina,imagemMusicaModel){
+
+            nomeMusicaPagina.textContent = nomeMusicaModel;
+            nomeArtistaPagina.textContent = nomeArtistiaModel;
+            duracaoMusicaPagina.textContent = duracaoMusicaModel;
+            imagemPagina.src = imagemMusicaModel;
+
+    },
+
+    renderTempoDecorrido: function(tempoDecorridoPagina,novoTempoDecorridoPagina){
+        tempoDecorridoPagina.textContent = novoTempoDecorridoPagina;
+    },
+
     playMusica: function(){
         musica = document.querySelector('audio');
         document.querySelector('.classBotaoPlay').style.display = 'none';
@@ -109,10 +125,10 @@ const controller ={
             nomeMusica = document.querySelector('.classNomeMusicaENomeArtista h2');
             nomeArtista = document.querySelector('.classNomeMusicaENomeArtista h3');
 
-            nomeMusica.textContent =  'Nome da Música: ' + musicaModel.nomeMusica;
-            nomeArtista.textContent = 'Artista: ' + musicaModel.nomeArtista;
-            imagem.src = musicaModel.imgMusica;
-            duracaoMusica.textContent = this.transformarSegundosParaMinutos(Math.floor(musicaPagina.duration));
+            view.renderMusica(nomeMusica, musicaModel.nomeMusica,
+                nomeArtista,musicaModel.nomeArtista,
+                duracaoMusica,this.transformarSegundosParaMinutos(Math.floor(musicaPagina.duration)),
+                imagem,musicaModel.imgMusica);
         });
 
         musicaPagina.addEventListener('timeupdate', () =>{
@@ -120,7 +136,8 @@ const controller ={
             let percent =Math.floor((musicaPagina.currentTime / musicaPagina.duration) * 100) + '%';
             barra.style.width = percent;
             let tempoDecorrido = document.querySelector('.classInicio');
-            tempoDecorrido.textContent = this.transformarSegundosParaMinutos(Math.floor(musicaPagina.currentTime));
+            view.renderTempoDecorrido(tempoDecorrido,this.transformarSegundosParaMinutos(Math.floor(musicaPagina.currentTime)));
+
 
             if(percent == '100%'){
                 view.pauseMusica();
