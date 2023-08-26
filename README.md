@@ -18,7 +18,7 @@ Foram utilizadas linhas de código que fazem uso do comando "document.querySelec
 
 Foram utilizados fontes da google api e estilos css da api font awesome.
 
-Player já inicia com a primeira música "Iron Maiden - Journeyman" carregada e pronta para tocar.
+O player já inicia com a primeira música "Iron Maiden - Journeyman" carregada e pronta para tocar.
 
 O player exibe uma imagem que representa a música corrente, possui uma barra de progresso com o tempo corrente/tempo total da música, controles de tocar/pausar a música , avançar para a música posterior ou voltar para a música anterior.
 
