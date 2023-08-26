@@ -1,6 +1,6 @@
 # Trabalho Prático 4 Arquitetura Backend
 
-# Player de Música Utilizando a Arquitetura MVX com SPA
+# Player de Música Utilizando a Arquitetura MVC com SPA
 
 Neste trabalho, contruimos um player de música utilizando a arquitetura MVC (Model-View-Controller) com SPA(Single-Page-Application) com a linguagem javascript.
 
