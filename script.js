@@ -82,7 +82,7 @@ const model ={
         },
 
         renderMusicaSrc: function (musicaPagina, musicaModelSrc){
-            musicaPagina.setAttribute('src', musicaModel.srcMusica);
+            musicaPagina.setAttribute('src', musicaModelSrc);
         },
     
         renderTempoDecorrido: function(tempoDecorridoPagina,novoTempoDecorridoPagina){
