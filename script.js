@@ -27,6 +27,9 @@ musicas :  [
      imgMusica:'resources/imagens/Roxette - Listen To Your Heart.jpg'},
     ],
 
+    retornarMusica: function(index){
+        return this.musicas[index];
+    },
     
     
 };
@@ -95,28 +98,29 @@ const controller ={
     },
 
     carregarMusica: function(index){
-        musica = document.querySelector('audio');
-        musica.setAttribute('src', model.musicas[index].srcMusica);
+        musicaPagina = document.querySelector('audio');
+        musicaModel = model.retornarMusica(index);
+        musicaPagina.setAttribute('src', musicaModel.srcMusica);
         
-        musica.addEventListener('loadeddata', () => {
+        musicaPagina.addEventListener('loadeddata', () => {
 
             duracaoMusica = document.querySelector('.classFim');
             imagem = document.querySelector('img');
             nomeMusica = document.querySelector('.classNomeMusicaENomeArtista h2');
             nomeArtista = document.querySelector('.classNomeMusicaENomeArtista h3');
 
-            nomeMusica.textContent =  'Nome da Música: ' + model.musicas[index].nomeMusica;
-            nomeArtista.textContent = 'Artista: ' + model.musicas[index].nomeArtista;
-            imagem.src = model.musicas[index].imgMusica;
-            duracaoMusica.textContent = this.transformarSegundosParaMinutos(Math.floor(musica.duration));
+            nomeMusica.textContent =  'Nome da Música: ' + musicaModel.nomeMusica;
+            nomeArtista.textContent = 'Artista: ' + musicaModel.nomeArtista;
+            imagem.src = musicaModel.imgMusica;
+            duracaoMusica.textContent = this.transformarSegundosParaMinutos(Math.floor(musicaPagina.duration));
         });
 
-        musica.addEventListener('timeupdate', () =>{
+        musicaPagina.addEventListener('timeupdate', () =>{
             let barra = document.querySelector('progress');
-            let percent =Math.floor((musica.currentTime / musica.duration) * 100) + '%';
+            let percent =Math.floor((musicaPagina.currentTime / musicaPagina.duration) * 100) + '%';
             barra.style.width = percent;
             let tempoDecorrido = document.querySelector('.classInicio');
-            tempoDecorrido.textContent = this.transformarSegundosParaMinutos(Math.floor(musica.currentTime));
+            tempoDecorrido.textContent = this.transformarSegundosParaMinutos(Math.floor(musicaPagina.currentTime));
 
             if(percent == '100%'){
                 view.pauseMusica();
