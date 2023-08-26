@@ -36,6 +36,64 @@ const view ={
 
     indexMusica : 0,
 
+    init: function(){
+
+        document.querySelector('.classBotaoPlay').addEventListener('click', this.playMusica);
+
+        document.querySelector('.classBotaoPause').addEventListener('click', this.pauseMusica);
+
+        document.querySelector('.classAnterior').addEventListener('click', () => {
+            this.indexMusica--;
+            if (this.indexMusica < 0) {
+            }
+            controller.carregarMusica(this.indexMusica);
+            this.pauseMusica();
+            let barra = document.querySelector('progress');
+            barra.style.width = '0%';
+        });
+        
+        document.querySelector('.classProxima').addEventListener('click', () => {
+            this.indexMusica++;
+            if (this.indexMusica > 4){
+                this.indexMusica = 0;
+            }
+            controller.carregarMusica(view.indexMusica);
+            this.pauseMusica();
+            let barra = document.querySelector('progress');
+            barra.style.width = '0%';
+        });
+
+
+    },
+
+    playMusica: function(){
+        musica = document.querySelector('audio');
+        document.querySelector('.classBotaoPlay').style.display = 'none';
+        document.querySelector('.classBotaoPause').style.display = 'block';
+        musica.play();
+    },
+    
+    pauseMusica: function (){
+        musica = document.querySelector('audio');
+        document.querySelector('.classBotaoPlay').style.display = 'block';
+        document.querySelector('.classBotaoPause').style.display = 'none';
+        musica.pause();
+    },
+    
+    
+
+};
+
+
+const controller ={
+    init: function(){
+
+        view.init();
+
+        this.carregarMusica(view.indexMusica);
+
+    },
+
     carregarMusica: function(index){
         musica = document.querySelector('audio');
         musica.setAttribute('src', model.musicas[index].srcMusica);
@@ -61,20 +119,6 @@ const view ={
         });
     },
 
-    playMusica: function(){
-        musica = document.querySelector('audio');
-        document.querySelector('.classBotaoPlay').style.display = 'none';
-        document.querySelector('.classBotaoPause').style.display = 'block';
-        musica.play();
-    },
-    
-    pauseMusica: function (){
-        musica = document.querySelector('audio');
-        document.querySelector('.classBotaoPlay').style.display = 'block';
-        document.querySelector('.classBotaoPause').style.display = 'none';
-        musica.pause();
-    },
-    
     transformarSegundosParaMinutos: function (segundos){
         novoSegundos = segundos % 60;
 
@@ -86,46 +130,6 @@ const view ={
     
         return novoMinutos+':'+novoSegundos;
     },
-
-};
-
-
-const controller ={
-    init: function(){
-
-        view.carregarMusica(view.indexMusica);
-
-        document.querySelector('.classBotaoPlay').addEventListener('click', view.playMusica);
-
-        document.querySelector('.classBotaoPause').addEventListener('click', view.pauseMusica);
-
-        musica = document.querySelector('audio');
-
-        document.querySelector('.classAnterior').addEventListener('click', () => {
-            view.indexMusica--;
-            if (view.indexMusica < 0) {
-                view.indexMusica = 4;
-            }
-            view.carregarMusica(view.indexMusica);
-            view.pauseMusica();
-            let barra = document.querySelector('progress');
-            barra.style.width = '0%';
-        });
-        
-        document.querySelector('.classProxima').addEventListener('click', () => {
-            view.indexMusica++;
-            if (view.indexMusica > 4){
-                view.indexMusica = 0;
-            }
-            view.carregarMusica(view.indexMusica);
-            view.pauseMusica();
-            let barra = document.querySelector('progress');
-            barra.style.width = '0%';
-        });
-
-
-    },
-
 
 };
 
