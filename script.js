@@ -88,6 +88,10 @@ const model ={
         renderTempoDecorrido: function(tempoDecorridoPagina,novoTempoDecorridoPagina){
             tempoDecorridoPagina.textContent = novoTempoDecorridoPagina;
         },
+
+        renderBarraPercent: function (barra, percent){
+            barra.style.width = percent;
+        },
     
         playMusica: function(){
             musica = document.querySelector('audio');
@@ -139,10 +143,9 @@ const model ={
             musicaPagina.addEventListener('timeupdate', () =>{
                 let barra = document.querySelector('progress');
                 let percent =Math.floor((musicaPagina.currentTime / musicaPagina.duration) * 100) + '%';
-                barra.style.width = percent;
+                view.renderBarraPercent(barra,percent)
                 let tempoDecorrido = document.querySelector('.classInicio');
                 view.renderTempoDecorrido(tempoDecorrido,this.transformarSegundosParaMinutos(Math.floor(musicaPagina.currentTime)));
-    
     
                 if(percent == '100%'){
                     view.pauseMusica();
