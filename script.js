@@ -32,9 +32,6 @@ musicas :  [
 };
 
 
-
-
-
 const view ={
 
     indexMusica : 0,

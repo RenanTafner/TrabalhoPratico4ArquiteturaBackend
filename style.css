@@ -42,6 +42,7 @@ img {
 
 h2 {
     margin-bottom: 5px;
+    font-size: 20px;
 }
 
 .classDuracaoMusica {
@@ -59,7 +60,7 @@ h2 {
 .classBarraDuracao {
     width: 400px;
     height: 6px;
-    border: 1px solid #eee;
+    border: 1px solid blue;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -75,7 +76,7 @@ progress {
 .classPonto {
     width: 20px;
     height: 20px;
-    background-color: #eee;
+    background-color: black;
     border-radius: 50%;
     margin-left: -10px;
 }
