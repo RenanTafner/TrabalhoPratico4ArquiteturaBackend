@@ -6,7 +6,7 @@ Neste trabalho, contruimos um player de música utilizando a arquitetura MVC (Mo
 
 Como utilizamos apenas html e javascript puro, não existe a necessidade de subir nenhum servidor para testar a aplicação, basta baixar o projeto na sua máquina e abrir a página index.html.
 
-Toda a estrutura MVC de lógica e funcionalidades da aplicação esta armazenada em um único arquivo script.js e a aplicação é representada por uma única página index.html.
+Toda a estrutura MVC de lógica e funcionalidades da aplicação esta armazenada em um único arquivo script.js, a aplicação é representada por uma única página index.html e também possui um arquivos de estilos style.css
 
 A camada de Model é responsável por armazenar a estrutura e os objetos que representam as músicas.
 
@@ -22,4 +22,10 @@ A página index.html já deixa a primeira música "Iron Maiden - Journeyman" já
 
 O player exibe uma imagem que representa a música corrente, possui uma barra de progresso com o tempo corrente/tempo total da música, controles de tocar/pausar a música , avançar para a música posterior ou voltar para a música anterior.
 
-Foram utilizados um total de 5 músicas com as respectivas imagens que as representam.
+Foram utilizados um total de 5 músicas com as respectivas imagens que as representam, que são estas:
+
+* Iron Maiden - Journeyman;
+* Evanescence - Bring Me To Life;
+* Thirty Seconds to Mars - Hurricane;
+* Linkin Park - In The End;
+* Roxette - Listen To Your Heart.
