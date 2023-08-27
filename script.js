@@ -48,6 +48,7 @@ const model ={
             document.querySelector('.classAnterior').addEventListener('click', () => {
                 this.indexMusica--;
                 if (this.indexMusica < 0) {
+                    this.indexMusica = 4;
                 }
                 controller.carregarMusica(this.indexMusica);
                 this.pauseMusica();
