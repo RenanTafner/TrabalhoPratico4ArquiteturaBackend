@@ -2,6 +2,13 @@
 
 # Player de Música Utilizando a Arquitetura MVC com SPA
 
+Integrantes do grupo:
+
+* Brayan Patrick Jardim Farias;
+* Luiz Gabriel Santos Fernandes;
+* Raife Ferreira Paiva;
+* Renan Carlos Silva Braz Tafner.
+
 Neste trabalho, contruimos um player de música utilizando a arquitetura MVC (Model-View-Controller) com SPA(Single-Page-Application) com as linguagens html e javascript.
 
 Como utilizamos apenas html e javascript puro, não existe a necessidade de subir nenhum servidor para testar a aplicação, basta baixar o projeto na sua máquina e abrir a página index.html.
