@@ -74,8 +74,8 @@ const model ={
             duracaoMusicaPagina,duracaoMusicaModel,
             imagemPagina,imagemMusicaModel){
     
-                nomeMusicaPagina.textContent = nomeMusicaModel;
-                nomeArtistaPagina.textContent = nomeArtistiaModel;
+                nomeMusicaPagina.textContent = 'Nome da Música: ' + nomeMusicaModel;
+                nomeArtistaPagina.textContent = 'Artista: '+ nomeArtistiaModel;
                 duracaoMusicaPagina.textContent = duracaoMusicaModel;
                 imagemPagina.src = imagemMusicaModel;
     
