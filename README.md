@@ -13,7 +13,7 @@ Neste trabalho, contruimos um player de música utilizando a arquitetura MVC (Mo
 
 Como utilizamos apenas html e javascript puro, não existe a necessidade de subir nenhum servidor para testar a aplicação, basta baixar o projeto na sua máquina e abrir a página index.html.
 
-Toda a estrutura MVC de lógica e funcionalidades da aplicação esta armazenada em um único arquivo script.js, a aplicação é representada por uma única página index.html e também possui um arquivos de estilos style.css
+Toda a estrutura MVC de lógica e funcionalidades da aplicação esta armazenada em um único arquivo script.js, a aplicação é representada por uma única página index.html e também possui um arquivo de estilos style.css
 
 A camada de Model é responsável por armazenar a estrutura e os objetos que representam as músicas.
 
