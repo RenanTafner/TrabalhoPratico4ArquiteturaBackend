@@ -54,6 +54,7 @@ const model ={
                 this.pauseMusica();
                 let barra = document.querySelector('progress');
                 barra.style.width = '0%';
+                this.delayPressPlayButton()
             });
             
             document.querySelector('.classProxima').addEventListener('click', () => {
@@ -65,9 +66,16 @@ const model ={
                 this.pauseMusica();
                 let barra = document.querySelector('progress');
                 barra.style.width = '0%';
+                this.delayPressPlayButton()
             });
     
     
+        },
+
+        delayPressPlayButton: function () {
+            setTimeout(() => {
+                this.playMusica()
+            }, 200);
         },
     
         renderMusicaInfo: function (nomeMusicaPagina,nomeMusicaModel,

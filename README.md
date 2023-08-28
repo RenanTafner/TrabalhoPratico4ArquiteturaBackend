@@ -9,7 +9,7 @@ Integrantes do grupo:
 * Raife Ferreira Paiva;
 * Renan Carlos Silva Braz Tafner.
 
-Neste trabalho, contruimos um player de música utilizando a arquitetura MVC (Model-View-Controller) com SPA(Single-Page-Application) com as linguagens html e javascript.
+Neste trabalho, construimos um player de música utilizando a arquitetura MVC (Model-View-Controller) com SPA(Single-Page-Application) com as linguagens html e javascript.
 
 Como utilizamos apenas html e javascript puro, não existe a necessidade de subir nenhum servidor para testar a aplicação, basta baixar o projeto na sua máquina e abrir a página index.html.
 
@@ -19,7 +19,7 @@ A camada de Model é responsável por armazenar a estrutura e os objetos que rep
 
 A camada de View é responsável por executar as funcionalidades da aplicação referentes a página única da aplicação em si, como manipular os elementos visuais da tela que representam o player de música e seus devidos comportamentos.
 
-A camda de Controller faz a linkagens dos elementos visuais da View com os comportamentos que dependem da camada Model.
+A camada de Controller faz as linkagens dos elementos visuais da View com os comportamentos que dependem da camada Model.
 
 Foram utilizadas linhas de código que fazem uso do comando "document.querySelector" para buscar os elementos html da página com base em suas classes css e o tipo de tag correspondente do elemento em questão.
 
